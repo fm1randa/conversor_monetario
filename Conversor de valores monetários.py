@@ -17,6 +17,7 @@ valorcotacaoeuro = float((cotacaoeuro2.text).replace(',', '.'))
 
 msg = 'Conversor de valores monetários'
 msg2 = 'Script feito por Filipe Miranda, os valores utilizados são do site: https://www.valor.com.br/valor-data'
+msg3 = 'Utilize "." para casas decimais.'
 contmsg = 0
 for caracter in msg2:
     if caracter in 'ABCDEFGHIJKLMNOPQRSTUVXWYZabcdefghijklmnopqrstuvxwyzã:/.-, ':
@@ -25,6 +26,7 @@ for caracter in msg2:
 print('='*int(contmsg))
 print(msg)
 print(msg2)
+print(msg3)
 print('='*int(contmsg))
 print('Cotação atual do dólar: {}'.format(valorcotacaodolar))
 print('Cotação atual do euro: {}'.format(valorcotacaoeuro))
