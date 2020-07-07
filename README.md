@@ -1,5 +1,5 @@
 # conver$or_monetario
-Script desenvolvido por **k1ra**
+Script desenvolvido por **Filipe**
 
 Requisitos:
 [requests](https://pypi.org/project/requests/) ,
