@@ -6,21 +6,32 @@ import json
 r = requests.get('https://www.valor.com.br/valor-data') #requisição do site
 soup = BeautifulSoup(r.text, 'html.parser')
 
-'''Dólar'''
-cotacaodolar = soup.find_all(class_='data-cotacao__ticker_quote')[0]
-valorcotacaodolar = float((cotacaodolar.text).replace(',', '.'))
+checkok = False
+while(checkok == False):
+    checkquote = input("Você deseja atualizar o valor da cotação? [s/n] ")
 
-'''Euro'''
-cotacaoeuro = soup.find_all(class_='data-cotacao__ticker_quote')[3]
-valorcotacaoeuro = float((cotacaoeuro.text).replace(',', '.'))
+    if(checkquote == "s"):
+        '''Dólar'''
+        cotacaodolar = soup.find_all(class_='data-cotacao__ticker_quote')[0]
+        valorcotacaodolar = float((cotacaodolar.text).replace(',', '.'))
 
-quotation = {
-    "dolar": valorcotacaodolar,
-    "euro": valorcotacaoeuro
-}
+        '''Euro'''
+        cotacaoeuro = soup.find_all(class_='data-cotacao__ticker_quote')[3]
+        valorcotacaoeuro = float((cotacaoeuro.text).replace(',', '.'))
 
-q = open("quote.json", "w")
-json.dump(quotation, q)
+        quotation = {
+            "dolar": valorcotacaodolar,
+            "euro": valorcotacaoeuro
+        }
+
+        q = open("quote.json", "w")
+        json.dump(quotation, q)
+
+        checkok = True 
+    elif(checkquote == "n"):
+        checkok = True
+    else:
+        print("Opção inválida")
 
 msg = 'Conversor de valores monetários'
 msg2 = 'Script feito por Filipe Miranda, os valores utilizados são do site: https://www.valor.com.br/valor-data'
