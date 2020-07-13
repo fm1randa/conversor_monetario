@@ -93,6 +93,6 @@ while(checkok == False):
 
 saldo = float(input('\nInsira o valor em reais (R$): '))
 print('\nCom R${:.2f} você pode comprar:'.format(saldo)) 
-print('US${:.2f} dólares'.format(saldo/float(valorcotacaodolar)))
-print('EUR€{:.2f} euros'.format(saldo/float(valorcotacaoeuro)))
+print('US$ {:.2f} dólares'.format(saldo/float(valorcotacaodolar)))
+print('EUR€ {:.2f} euros'.format(saldo/float(valorcotacaoeuro)))
 input('Tecle enter para sair ')
