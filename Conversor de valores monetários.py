@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import json
+
 
 r = requests.get('https://www.valor.com.br/valor-data') #requisição do site
 soup = BeautifulSoup(r.text, 'html.parser')
@@ -11,6 +13,14 @@ valorcotacaodolar = float((cotacaodolar.text).replace(',', '.'))
 '''Euro'''
 cotacaoeuro = soup.find_all(class_='data-cotacao__ticker_quote')[3]
 valorcotacaoeuro = float((cotacaoeuro.text).replace(',', '.'))
+
+quotation = {
+    "dolar": valorcotacaodolar,
+    "euro": valorcotacaoeuro
+}
+
+q = open("quote.json", "w")
+json.dump(quotation, q)
 
 msg = 'Conversor de valores monetários'
 msg2 = 'Script feito por Filipe Miranda, os valores utilizados são do site: https://www.valor.com.br/valor-data'
