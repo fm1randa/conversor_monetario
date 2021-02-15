@@ -91,8 +91,29 @@ while(checkok == False):
         print("Opção inválida")
 
 
-saldo = float(input('\nInsira o valor em reais (R$): '))
-print('\nCom R${:.2f} você pode comprar:'.format(saldo)) 
-print('US$ {:.2f} dólares'.format(saldo/float(valorcotacaodolar)))
-print('EUR€ {:.2f} euros'.format(saldo/float(valorcotacaoeuro)))
-input('Tecle enter para sair ')
+checkokmoeda = False
+while(checkokmoeda == False):
+    moeda = input('\nEscolha a moeda base: [REAL: r, DOLAR: d, EURO: e]: ')
+    if(moeda == 'r'):
+        saldo = float(input('\nInsira o valor em reais (R$): '))
+        print('\nCom R${:.2f} você pode comprar:'.format(saldo)) 
+        print('US$ {:.2f} dólares'.format(saldo/float(valorcotacaodolar)))
+        print('EUR€ {:.2f} euros'.format(saldo/float(valorcotacaoeuro)))
+        input('Tecle enter para sair ')
+        checkokmoeda = True
+
+    elif(moeda == 'd'):
+        saldo = float(input('\nInsira o valor em dólares (US$): '))
+        print('\nCom US${:.2f} você pode comprar:'.format(saldo)) 
+        print('R$ {:.2f} reais'.format(saldo*float(valorcotacaodolar)))
+        input('Tecle enter para sair ')
+        checkokmoeda = True
+
+    elif(moeda == 'e'):
+        saldo = float(input('\nInsira o valor em euro (EUR€): '))
+        print('\nCom EUR€{:.2f} você pode comprar:'.format(saldo)) 
+        print('R$ {:.2f} reais'.format(saldo*float(valorcotacaoeuro)))
+        input('Tecle enter para sair ')
+        checkokmoeda = True
+    else:
+        print('Opção inválida.')
