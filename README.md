@@ -20,3 +20,19 @@ Converte de:
 • Euro pra real
 
 • Dólar pra real
+
+### Exemplo de request com JSON:
+```json
+{
+	"currency": "r",
+	"value": 100
+}
+```
+### Resposta:
+```json
+{
+  "eur": 6.1258,
+  "msg": "Com R$100.00 você pode comprar: US$ 19.86 dólares e EUR€ 16.32 euros",
+  "usd": 5.0341
+}
+```
