@@ -15,7 +15,8 @@ def home():
     'disclaimer': 'Script feito por Filipe Miranda, os valores utilizados são do site: https://www.valor.com.br/valor-data',
     'github': 'fm1randa',
     'twitter': 'k1ra_exe',
-    'usage': 'Utilize \'.\' para casas decimais. JSON: { currency: \'r\', value: 100 }'
+    'usage': 'Utilize \'.\' para casas decimais. JSON: { currency: \'r\', value: 100 }',
+    'currencies': [{"REAL": "r"}, {"DOLAR": "d"}, {"EURO": "e"}]
   }
 
 @app.route('/convert', methods=['POST'])
