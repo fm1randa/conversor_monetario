@@ -96,4 +96,4 @@ def convert():
       'error': 'Valor inválido, insira um inteiro ou decimal'
       }, 400
 
-app.run()
+app.run(host='0.0.0.0')
