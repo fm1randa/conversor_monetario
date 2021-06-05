@@ -9,10 +9,10 @@ Requisitos:
 https://kconvert.herokuapp.com/
 
 ## **Uso da API**
-### **/**
+### GET **/**
 Home, informações
 
-### **/convert**
+### POST **/convert**
 Converte de:
 
 • Real pra dólar e euro
