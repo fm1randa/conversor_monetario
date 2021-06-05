@@ -24,8 +24,8 @@ Converte de:
 ### Exemplo de request com JSON:
 ```json
 {
-	"currency": "r",
-	"value": 100
+   "currency": "r",
+   "value": 100
 }
 ```
 ### Resposta:
