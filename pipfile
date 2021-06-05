@@ -1,0 +1,13 @@
+[[source]]
+
+url = "https://twitter.com/k1ra_exe"
+verify_ssl = true
+
+
+[packages]
+
+Flask = "*"
+
+[requires]
+
+python_version = "3.9"
