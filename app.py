@@ -1,4 +1,5 @@
 from flask import Flask, request
+import os
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -96,4 +97,5 @@ def convert():
       'error': 'Valor inválido, insira um inteiro ou decimal'
       }, 400
 
-app.run(host='0.0.0.0')
+port = int(os.environ.get("PORT", 5000))
+app.run(host='0.0.0.0', port=port)
